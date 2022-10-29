@@ -1,11 +1,9 @@
-// O'rta qiymat aniqlash algorithmi
+do {
+  var son = +prompt("Enter the positive number!");
 
-let num = +prompt("Son kiriting");
-let num2 = +prompt("yana Son kiriting");
-let num3 = +prompt("Yana Son kiriting");
-if (isNaN(num) || isNaN(num2) || isNaN(num3)) {
-  console.log("Raqam kiriting iltimos!");
-}
-if (num < num2 || num > num3 || num > num2 || num < num3) {
-  console.log("O'rta qiymat " + num2);
-}
+  let answer = 1;
+  for (let i = 1; i <= son; i++) {
+    answer *= i;
+  }
+  console.log(answer + " is the factorial of " + son);
+} while (isNaN(son));
