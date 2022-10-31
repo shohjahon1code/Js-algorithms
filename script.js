@@ -1,15 +1,25 @@
-// juft yoki toqligini topish
-let num = parseInt(prompt("Enter the number!"));
+// sonni darajaga kutarish algorithmi!!!
 
-if (isNaN(num) || "") {
-  do {
-    alert("Son emasku bu");
-    num = parseInt(prompt("Enter the number!"));
-  } while (true);
-} else {
-  if (num % 2) {
-    alert("Kiritgan soningiz toq son");
-  } else {
-    alert("Kiritgan soningiz juft ekan");
+do {
+  let num = parseInt(prompt("Enter the number!"));
+  let degr = parseInt(prompt("Enter the degree!"));
+
+  if (isNaN(num) || isNaN(degr) || num === 0 || degr === 0) {
+    parseInt(prompt("Enter the number!"));
+    parseInt(prompt("Enter the degree!"));
   }
+
+  alert(num ** degr);
+} while (Infinity);
+
+// ikkinchi usuli
+
+let number = +prompt("Enter the number!");
+let level = +prompt("Enter the level!");
+
+let answer = 1;
+
+for (let i = 0; i < level; i++) {
+  answer = answer * number;
 }
+console.log(answer);
