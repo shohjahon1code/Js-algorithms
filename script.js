@@ -1,25 +1,11 @@
-// sonni darajaga kutarish algorithmi!!!
+// Kiritgan sonignizni ket-ketlikda qo'shib berish algorithmi
 
-do {
-  let num = parseInt(prompt("Enter the number!"));
-  let degr = parseInt(prompt("Enter the degree!"));
+let num = parseInt(prompt("Enter the number!"));
 
-  if (isNaN(num) || isNaN(degr) || num === 0 || degr === 0) {
-    parseInt(prompt("Enter the number!"));
-    parseInt(prompt("Enter the degree!"));
-  }
+let answer = 0;
 
-  alert(num ** degr);
-} while (Infinity);
-
-// ikkinchi usuli
-
-let number = +prompt("Enter the number!");
-let level = +prompt("Enter the level!");
-
-let answer = 1;
-
-for (let i = 0; i < level; i++) {
-  answer = answer * number;
+for (let i = 0; i <= num; i++) {
+  answer = answer + i;
 }
+
 console.log(answer);
