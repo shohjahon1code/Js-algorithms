@@ -1,11 +1,7 @@
-// Kiritgan sonignizni ket-ketlikda qo'shib berish algorithmi
+let number = parseInt(prompt("Enter the number"));
+let sheep = "🐑";
 
-let num = parseInt(prompt("Enter the number!"));
-
-let answer = 0;
-
-for (let i = 0; i <= num; i++) {
-  answer = answer + i;
+for (let i = 0; i <= number; i++) {
+  console.log(sheep);
+  sheep = sheep + "🐑";
 }
-
-console.log(answer);
