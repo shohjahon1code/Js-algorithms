@@ -1,40 +1,47 @@
-function getRandomInteger(max = 100, min = 0) {
-  return Math.floor(Math.random() * max + 1 - min) + min;
-}
-
-let num = +prompt("Nechta misol yechmoqchisiz?");
-while (isNaN(num)) {
-  num = +prompt("Qaytadan kiriting son kiritmadingiz!");
-}
-let max = +prompt("Maximal sonni kiriting?");
-while (isNaN(max)) {
-  max = +prompt("Qaytadan kiriting siz son kiritmadingiz!");
-}
-let min = +prompt("Minimal sonni kiriting?");
-while (isNaN(min) || min > max) {
-  min = +prompt("Qaytadan kiriting!");
-}
-
-for (let i = 1; i <= num; i++) {
-  let num1 = getRandomInteger(max, min);
-  let num2 = getRandomInteger(max, min);
-
-  let answer = +prompt(`Misol N${i}: ${num1} + ${num2} = ?`);
-  let general = num1 + num2;
-  if (answer == general) {
-    alert("Javobingiz togri");
-  } else {
-    alert("Javobingiz notogri");
-  }
-}
-
-function getColor() {
-  let r = getRandomInteger(255, 0);
-  let g = getRandomInteger(255, 0);
-  let b = getRandomInteger(255, 0);
-
-  return `rgb(${r}, ${g}, ${b})`;
-}
-
-document.body.style.transition = "1s";
-setInterval(() => (document.body.style.background = getColor()), 1000);
+const productList = {
+  calculateAllPrice: () => {
+    let allPrice = 0;
+    for (const key in productList) {
+      const product = productList[key];
+      if (typeof product === "object") {
+        allPrice += product.price * (product.weight || product.amount);
+      }
+    }
+    return allPrice;
+  },
+  potota: {
+    name: "kartoshka",
+    weight: 4,
+    price: 5000,
+  },
+  tomato: {
+    name: "Pamidor",
+    weight: 3,
+    price: 15000,
+  },
+  cucumber: {
+    name: "Bodring",
+    weight: 2,
+    price: 9000,
+  },
+  meat: {
+    name: "Quy goshti",
+    weight: 1,
+    price: 90000,
+  },
+  carrot: {
+    name: "sabzi",
+    weight: 4,
+    price: 5000,
+  },
+  bread: {
+    name: "non",
+    amount: 4,
+    price: 5000,
+  },
+  cola: {
+    name: "Kola",
+    amount: 4,
+    price: 12000,
+  },
+};
